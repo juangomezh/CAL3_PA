@@ -1,0 +1,55 @@
+The client 1 enters SuperMarket
+The client 1 waits at the fisher
+The client 1 is being attended by fisher
+The client 2 enters SuperMarket
+The client 2 waits at the fisher
+The client 3 enters SuperMarket
+The client 3 waits at the fisher
+The client 4 enters SuperMarket
+The client 4 waits at the fisher
+The client 1 is waits at the waiting line
+The client 1 is being attended by the cashier 1
+The client 2 is being attended by fisher
+The client 5 enters SuperMarket
+The client 5 goes to the Shelves
+The client 6 enters SuperMarket
+The client 6 goes to the Shelves
+The client 7 enters SuperMarket
+The client 7 waits at the butcher
+The client 7 is being attended by butcher
+The client 8 enters SuperMarket
+The client 8 waits at the fisher
+The client 3 is being attended by fisher
+The client 2 is waits at the waiting line
+The client 9 enters SuperMarket
+The client 9 goes to the Shelves
+The client 10 enters SuperMarket
+The client 10 waits at the butcher
+The client 10 is being attended by butcher
+The client 7 is waits at the waiting line
+The client 7 is being attended by the cashier 1
+The client 2 is being attended by the cashier 2
+The client 3 is waits at the waiting line
+The client 4 is being attended by fisher
+The client 10 is waits at the waiting line
+The client 6 is waits at the waiting line
+The client 8 is being attended by fisher
+The client 4 is waits at the waiting line
+The client 6 is being attended by the cashier 1
+The client 3 is being attended by the cashier 2
+The client 5 is waits at the waiting line
+The client 8 is waits at the waiting line
+The client 4 is being attended by the cashier 1
+The client 9 is waits at the waiting line
+The client 10 is being attended by the cashier 2
+The client 5 is being attended by the cashier 1
+The client 8 is being attended by the cashier 2
+The client 9 is being attended by the cashier 1
+
+The number of accumulated services in the butcher are: 2
+The average time of work of the butcher is: 2.756 seconds
+The number of accumulated services in the fisher are: 5
+The average time of work of the fisher is: 2.798 seconds
+The client average time of the clients inside the SP: 14.397 seconds
+The number of clients that have passed through: 10
+
