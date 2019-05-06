@@ -69,7 +69,7 @@ public class Server extends Thread{
         //Create all he objects
         SuperMarket mercadona;
         Buyer v;
-        int numcli=100;
+        int numcli=20000;
         CountDownLatch parar=new CountDownLatch(1);
         CountDownLatch finish=new CountDownLatch(numcli+4);
         Main main = new Main();
