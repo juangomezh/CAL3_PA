@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CAL3">
+  <ClassDiagramComponents>
+    <Class name="Butcher" package="cal3" visibility="public" xPosition="193.0" yPosition="2774.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="ex" type="SuperMarket" visibility="private"/>
+        <Field name="finish" type="CountDownLatch" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CountDownLatch" name="finish"/>
+          <Argument type="int" name="id"/>
+          <Argument type="SuperMarket" name="ex"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Buyer" package="cal3" visibility="public" xPosition="2839.0" yPosition="936.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="ex" type="SuperMarket" visibility="private"/>
+        <Field name="t0" type="long" visibility="private"/>
+        <Field name="finish" type="CountDownLatch" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CountDownLatch" name="finish"/>
+          <Argument type="int" name="id"/>
+          <Argument type="SuperMarket" name="ex"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cashier" package="cal3" visibility="public" xPosition="1893.0" yPosition="1150.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="ex" type="SuperMarket" visibility="private"/>
+        <Field name="finish" type="CountDownLatch" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CountDownLatch" name="finish"/>
+          <Argument type="int" name="id"/>
+          <Argument type="SuperMarket" name="ex"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setEx" returnType="void" visibility="public">
+          <Argument type="SuperMarket" name="ex"/>
+        </Method>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Client" package="cal3" visibility="public" xPosition="145.0" yPosition="1061.0">
+      <Fields>
+        <Field name="IP" type="String" visibility="private" isStatic="true"/>
+        <Field name="Puerto" type="int" visibility="private" isStatic="true"/>
+        <Field name="entrada" type="BufferedReader" visibility="private"/>
+        <Field name="client" type="Socket" visibility="private"/>
+        <Field name="connected" type="boolean" visibility="private"/>
+        <Field name="input" type="DataInputStream" visibility="private"/>
+        <Field name="output" type="DataOutputStream" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="stop" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="resume" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControlModule" package="cal3" visibility="public" xPosition="642.0" yPosition="966.0">
+      <Fields>
+        <Field name="cliente" type="Client" visibility="private"/>
+        <Field name="ResumeButcher" type="javax.swing.JButton" visibility="private"/>
+        <Field name="ResumeFishMonger" type="javax.swing.JButton" visibility="private"/>
+        <Field name="ResumeSuperMarket" type="javax.swing.JButton" visibility="private"/>
+        <Field name="StopButcher" type="javax.swing.JButton" visibility="private"/>
+        <Field name="StopFishMonger" type="javax.swing.JButton" visibility="private"/>
+        <Field name="StopSuperMarket" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="StopButcherActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ResumeButcherActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="StopSuperMarketActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ResumeSuperMarketActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ResumeFishMongerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="StopFishMongerActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Fisher" package="cal3" visibility="public" xPosition="2541.0" yPosition="1312.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="ex" type="SuperMarket" visibility="private"/>
+        <Field name="finish" type="CountDownLatch" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CountDownLatch" name="finish"/>
+          <Argument type="int" name="id"/>
+          <Argument type="SuperMarket" name="ex"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="cal3" visibility="public" xPosition="3536.0" yPosition="619.0">
+      <Fields>
+        <Field name="mercadona" type="SuperMarket" visibility="private"/>
+        <Field name="v" type="Buyer" visibility="private"/>
+        <Field name="Butcher" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Cashier1" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Cashier2" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Close" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Fishmonger" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Resume" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Shelves" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Stop" type="javax.swing.JButton" visibility="private"/>
+        <Field name="WaitingButhcer" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="WaitingEnter" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="WaitingFish" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="WaitingLine" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="StopActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ResumeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="ShelvesActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="CloseActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="getMercadona" returnType="SuperMarket" visibility="public"/>
+        <Method name="setMercadona" returnType="void" visibility="public">
+          <Argument type="SuperMarket" name="mercadona"/>
+        </Method>
+        <Method name="getV" returnType="Buyer" visibility="public"/>
+        <Method name="setV" returnType="void" visibility="public">
+          <Argument type="Buyer" name="v"/>
+        </Method>
+        <Method name="getShelves" returnType="JTextField" visibility="public"/>
+        <Method name="setShelves" returnType="void" visibility="public">
+          <Argument type="JTextField" name="Shelves"/>
+        </Method>
+        <Method name="getButcher" returnType="JTextField" visibility="public"/>
+        <Method name="setButcher" returnType="void" visibility="public">
+          <Argument type="JTextField" name="Butcher"/>
+        </Method>
+        <Method name="getCashier1" returnType="JTextField" visibility="public"/>
+        <Method name="setCashier1" returnType="void" visibility="public">
+          <Argument type="JTextField" name="Cashier1"/>
+        </Method>
+        <Method name="getCashier2" returnType="JTextField" visibility="public"/>
+        <Method name="setCashier2" returnType="void" visibility="public">
+          <Argument type="JTextField" name="Cashier2"/>
+        </Method>
+        <Method name="getFishmonger" returnType="JTextField" visibility="public"/>
+        <Method name="setFishmonger" returnType="void" visibility="public">
+          <Argument type="JTextField" name="Fishmonger"/>
+        </Method>
+        <Method name="getResume" returnType="JButton" visibility="public"/>
+        <Method name="setResume" returnType="void" visibility="public">
+          <Argument type="JButton" name="Resume"/>
+        </Method>
+        <Method name="getStop" returnType="JButton" visibility="public"/>
+        <Method name="setStop" returnType="void" visibility="public">
+          <Argument type="JButton" name="Stop"/>
+        </Method>
+        <Method name="getWaitingButhcer" returnType="JTextField" visibility="public"/>
+        <Method name="setWaitingButhcer" returnType="void" visibility="public">
+          <Argument type="JTextField" name="WaitingButhcer"/>
+        </Method>
+        <Method name="getWaitingEnter" returnType="JTextField" visibility="public"/>
+        <Method name="setWaitingEnter" returnType="void" visibility="public">
+          <Argument type="JTextField" name="WaitingEnter"/>
+        </Method>
+        <Method name="getWaitingFish" returnType="JTextField" visibility="public"/>
+        <Method name="setWaitingFish" returnType="void" visibility="public">
+          <Argument type="JTextField" name="WaitingFish"/>
+        </Method>
+        <Method name="getWaitingLine" returnType="JTextField" visibility="public"/>
+        <Method name="setWaitingLine" returnType="void" visibility="public">
+          <Argument type="JTextField" name="WaitingLine"/>
+        </Method>
+        <Method name="getjLabel2" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel2" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel2"/>
+        </Method>
+        <Method name="getjLabel3" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel3" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel3"/>
+        </Method>
+        <Method name="getjLabel4" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel4" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel4"/>
+        </Method>
+        <Method name="getjLabel5" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel5" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel5"/>
+        </Method>
+        <Method name="getjLabel6" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel6" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel6"/>
+        </Method>
+        <Method name="getjLabel7" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel7" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel7"/>
+        </Method>
+        <Method name="getjLabel8" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel8" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel8"/>
+        </Method>
+        <Method name="getjLabel9" returnType="JLabel" visibility="public"/>
+        <Method name="setjLabel9" returnType="void" visibility="public">
+          <Argument type="JLabel" name="jLabel9"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NewClass" package="cal3" visibility="public" xPosition="3567.0" yPosition="3548.0">
+      <Fields>
+        <Field name="connection" type="Socket" visibility="private"/>
+        <Field name="output" type="DataOutputStream" visibility="private"/>
+        <Field name="input" type="DataInputStream" visibility="private"/>
+        <Field name="mercadona" type="SuperMarket" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Socket" name="connection"/>
+          <Argument type="SuperMarket" name="mercadona"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="NQueue" package="cal3" visibility="public" xPosition="292.0" yPosition="3558.0">
+      <Fields>
+        <Field name="content" type="int[]" visibility="private"/>
+        <Field name="stop" type="boolean" visibility="private"/>
+        <Field name="ptr" type="int" visibility="private"/>
+        <Field name="escribir" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="capacity"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="setS" returnType="void" visibility="public">
+          <Argument type="boolean" name="c"/>
+        </Method>
+        <Method name="push" returnType="int" visibility="public" isSynchronized="true">
+          <Argument type="int" name="n"/>
+        </Method>
+        <Method name="pop" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="int" name="n"/>
+        </Method>
+        <Method name="pop" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="emptyQueue" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="first" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="noOfItems" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="ptrString" returnType="String" visibility="public" isSynchronized="true"/>
+        <Method name="signal" returnType="void" visibility="public" isSynchronized="true"/>
+      </Methods>
+    </Class>
+    <Class name="Queue" package="cal3" visibility="public" xPosition="1480.0" yPosition="1113.0">
+      <Fields>
+        <Field name="content" type="int[]" visibility="private"/>
+        <Field name="tf" type="JTextField" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="stop" type="boolean" visibility="private"/>
+        <Field name="ptr" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="capacity"/>
+          <Argument type="JTextField" name="tf"/>
+          <Argument type="String" name="name"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isEmpty" returnType="boolean" visibility="public"/>
+        <Method name="setS" returnType="void" visibility="public">
+          <Argument type="boolean" name="c"/>
+        </Method>
+        <Method name="push" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="int" name="n"/>
+        </Method>
+        <Method name="pop" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="int" name="n"/>
+        </Method>
+        <Method name="pop" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="emptyQueue" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="first" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="noOfItems" returnType="int" visibility="public" isSynchronized="true"/>
+        <Method name="ptrString" returnType="String" visibility="public" isSynchronized="true"/>
+        <Method name="print" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="signal" returnType="void" visibility="public" isSynchronized="true"/>
+      </Methods>
+    </Class>
+    <Class name="Server" package="cal3" visibility="public" xPosition="1745.0" yPosition="713.0">
+      <Fields>
+        <Field name="Puerto" type="int" visibility="private"/>
+        <Field name="entrada" type="BufferedReader" visibility="private"/>
+        <Field name="bound" type="boolean" visibility="private"/>
+        <Field name="server" type="ServerSocket" visibility="private"/>
+        <Field name="connection" type="Socket" visibility="private"/>
+        <Field name="output" type="DataOutputStream" visibility="private"/>
+        <Field name="input" type="DataInputStream" visibility="private"/>
+        <Field name="mercadona" type="SuperMarket" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Main" name="main"/>
+          <Argument type="CountDownLatch" name="parar"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SuperMarket" package="cal3" visibility="public" xPosition="1366.0" yPosition="1978.0">
+      <Fields>
+        <Field name="averagetimebutcher" type="float" visibility="private"/>
+        <Field name="b0" type="long" visibility="package"/>
+        <Field name="butcherservices" type="int" visibility="private"/>
+        <Field name="writer" type="Writer" visibility="private"/>
+        <Field name="capacity" type="int" visibility="private"/>
+        <Field name="averagecli" type="float" visibility="private"/>
+        <Field name="butcher" type="Butcher" visibility="private"/>
+        <Field name="fisher" type="Fisher" visibility="private"/>
+        <Field name="c1" type="Cashier" visibility="private"/>
+        <Field name="finish" type="CountDownLatch" visibility="private"/>
+        <Field name="Finished" type="boolean" visibility="private"/>
+        <Field name="WaitingC1" type="NQueue" visibility="private"/>
+        <Field name="WaitingSuperMarket" type="Queue" visibility="private"/>
+        <Field name="OnShelves" type="Queue" visibility="private"/>
+        <Field name="WaitingButcher" type="Queue" visibility="private"/>
+        <Field name="WaitingFish" type="Queue" visibility="private"/>
+        <Field name="WaitingPay" type="Queue" visibility="private"/>
+        <Field name="InsideS" type="Semaphore" visibility="private"/>
+        <Field name="Fish" type="Lock" visibility="private"/>
+        <Field name="FishL" type="Condition" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="CountDownLatch" name="parar"/>
+          <Argument type="int" name="numcli"/>
+          <Argument type="int" name="capacity"/>
+          <Argument type="JTextField" name="Butcher"/>
+          <Argument type="JTextField" name="Cashier1"/>
+          <Argument type="JTextField" name="Cashier2"/>
+          <Argument type="JTextField" name="Fishmonger"/>
+          <Argument type="JTextField" name="WaitingButhcer"/>
+          <Argument type="JTextField" name="WaitingEnter"/>
+          <Argument type="JTextField" name="WaitingFish"/>
+          <Argument type="JTextField" name="WaitingLine"/>
+          <Argument type="JTextField" name="WShelves"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isFinished" returnType="boolean" visibility="public"/>
+        <Method name="enter" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="finish" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="leave" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="shop" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="shelves" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="waitButcher" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="butcherAtt" returnType="void" visibility="public"/>
+        <Method name="tryButcher" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="waitFisher" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="tryFisher" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="fisherAtt" returnType="void" visibility="public"/>
+        <Method name="tryCashier1" returnType="void" visibility="public"/>
+        <Method name="tryCashier2" returnType="void" visibility="public"/>
+        <Method name="pay" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="waitPayC1" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="waitPayC2" returnType="void" visibility="public">
+          <Argument type="int" name="v"/>
+        </Method>
+        <Method name="cash1Att" returnType="void" visibility="public"/>
+        <Method name="Cash2Att" returnType="void" visibility="public"/>
+        <Method name="totalTime" returnType="void" visibility="public">
+          <Argument type="long" name="t"/>
+        </Method>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="timefisher" returnType="void" visibility="public">
+          <Argument type="long" name="time"/>
+        </Method>
+        <Method name="timebutcher" returnType="void" visibility="public">
+          <Argument type="long" name="time"/>
+        </Method>
+        <Method name="setButcherservices" returnType="void" visibility="public">
+          <Argument type="int" name="butcherservices"/>
+        </Method>
+        <Method name="setFisherservices" returnType="void" visibility="public">
+          <Argument type="int" name="fisherservices"/>
+        </Method>
+        <Method name="setFinished" returnType="void" visibility="public">
+          <Argument type="boolean" name="Finished"/>
+        </Method>
+        <Method name="setTerminated" returnType="void" visibility="public">
+          <Argument type="boolean" name="Terminated"/>
+        </Method>
+        <Method name="getCapacity" returnType="int" visibility="public"/>
+        <Method name="setCapacity" returnType="void" visibility="public">
+          <Argument type="int" name="capacity"/>
+        </Method>
+        <Method name="getNumcli" returnType="int" visibility="public"/>
+        <Method name="setNumcli" returnType="void" visibility="public">
+          <Argument type="int" name="numcli"/>
+        </Method>
+        <Method name="getAveragecli" returnType="float" visibility="public"/>
+        <Method name="setAveragecli" returnType="void" visibility="public">
+          <Argument type="float" name="averagecli"/>
+        </Method>
+        <Method name="getButcher" returnType="Butcher" visibility="public"/>
+        <Method name="setButcher" returnType="void" visibility="public">
+          <Argument type="Butcher" name="butcher"/>
+        </Method>
+        <Method name="getFisher" returnType="Fisher" visibility="public"/>
+        <Method name="setFisher" returnType="void" visibility="public">
+          <Argument type="Fisher" name="fisher"/>
+        </Method>
+        <Method name="getC1" returnType="Cashier" visibility="public"/>
+        <Method name="setC1" returnType="void" visibility="public">
+          <Argument type="Cashier" name="c1"/>
+        </Method>
+        <Method name="getC2" returnType="Cashier" visibility="public"/>
+        <Method name="setC2" returnType="void" visibility="public">
+          <Argument type="Cashier" name="c2"/>
+        </Method>
+        <Method name="getFinish" returnType="CountDownLatch" visibility="public"/>
+        <Method name="setFinish" returnType="void" visibility="public">
+          <Argument type="CountDownLatch" name="finish"/>
+        </Method>
+        <Method name="getWaitingSuperMarket" returnType="Queue" visibility="public"/>
+        <Method name="setWaitingSuperMarket" returnType="void" visibility="public">
+          <Argument type="Queue" name="WaitingSuperMarket"/>
+        </Method>
+        <Method name="getWaitingButcher" returnType="Queue" visibility="public"/>
+        <Method name="setWaitingButcher" returnType="void" visibility="public">
+          <Argument type="Queue" name="WaitingButcher"/>
+        </Method>
+        <Method name="getButcherAtt" returnType="Queue" visibility="public"/>
+        <Method name="setButcherAtt" returnType="void" visibility="public">
+          <Argument type="Queue" name="ButcherAtt"/>
+        </Method>
+        <Method name="getWaitingFish" returnType="Queue" visibility="public"/>
+        <Method name="setWaitingFish" returnType="void" visibility="public">
+          <Argument type="Queue" name="WaitingFish"/>
+        </Method>
+        <Method name="getFishAtt" returnType="Queue" visibility="public"/>
+        <Method name="getOnShelves" returnType="Queue" visibility="public"/>
+        <Method name="setOnShelves" returnType="void" visibility="public">
+          <Argument type="Queue" name="OnShelves"/>
+        </Method>
+        <Method name="getWaitCh1" returnType="Lock" visibility="public"/>
+        <Method name="setWaitCh1" returnType="void" visibility="public">
+          <Argument type="Lock" name="WaitCh1"/>
+        </Method>
+        <Method name="setFishAtt" returnType="void" visibility="public">
+          <Argument type="Queue" name="FishAtt"/>
+        </Method>
+        <Method name="getWaitingPay" returnType="Queue" visibility="public"/>
+        <Method name="setWaitingPay" returnType="void" visibility="public">
+          <Argument type="Queue" name="WaitingPay"/>
+        </Method>
+        <Method name="getPayCash1" returnType="Queue" visibility="public"/>
+        <Method name="setPayCash1" returnType="void" visibility="public">
+          <Argument type="Queue" name="PayCash1"/>
+        </Method>
+        <Method name="getPayCash2" returnType="Queue" visibility="public"/>
+        <Method name="setPayCash2" returnType="void" visibility="public">
+          <Argument type="Queue" name="PayCash2"/>
+        </Method>
+        <Method name="getInsideS" returnType="Semaphore" visibility="public"/>
+        <Method name="setInsideS" returnType="void" visibility="public">
+          <Argument type="Semaphore" name="InsideS"/>
+        </Method>
+        <Method name="getFisherS" returnType="Semaphore" visibility="public"/>
+        <Method name="setFisherS" returnType="void" visibility="public">
+          <Argument type="Semaphore" name="FisherS"/>
+        </Method>
+        <Method name="getButcherS" returnType="Semaphore" visibility="public"/>
+        <Method name="setButcherS" returnType="void" visibility="public">
+          <Argument type="Semaphore" name="ButcherS"/>
+        </Method>
+        <Method name="getCashier1S" returnType="Semaphore" visibility="public"/>
+        <Method name="setCashier1S" returnType="void" visibility="public">
+          <Argument type="Semaphore" name="Cashier1S"/>
+        </Method>
+        <Method name="getCashier2S" returnType="Semaphore" visibility="public"/>
+        <Method name="setCashier2S" returnType="void" visibility="public">
+          <Argument type="Semaphore" name="Cashier2S"/>
+        </Method>
+        <Method name="getFish" returnType="Lock" visibility="public"/>
+        <Method name="setFish" returnType="void" visibility="public">
+          <Argument type="Lock" name="Fish"/>
+        </Method>
+        <Method name="setButcher" returnType="void" visibility="public">
+          <Argument type="Lock" name="Butcher"/>
+        </Method>
+        <Method name="getWaitCh" returnType="Lock" visibility="public"/>
+        <Method name="setWaitCh" returnType="void" visibility="public">
+          <Argument type="Lock" name="WaitCh"/>
+        </Method>
+        <Method name="getFishL" returnType="Condition" visibility="public"/>
+        <Method name="setFishL" returnType="void" visibility="public">
+          <Argument type="Condition" name="FishL"/>
+        </Method>
+        <Method name="getButcherL" returnType="Condition" visibility="public"/>
+        <Method name="setButcherL" returnType="void" visibility="public">
+          <Argument type="Condition" name="ButcherL"/>
+        </Method>
+        <Method name="getCash1L" returnType="Condition" visibility="public"/>
+        <Method name="setCash1L" returnType="void" visibility="public">
+          <Argument type="Condition" name="Cash1L"/>
+        </Method>
+        <Method name="getCash2L" returnType="Condition" visibility="public"/>
+        <Method name="setCash2L" returnType="void" visibility="public">
+          <Argument type="Condition" name="Cash2L"/>
+        </Method>
+        <Method name="getWriter" returnType="Writer" visibility="public"/>
+        <Method name="setWriter" returnType="void" visibility="public">
+          <Argument type="Writer" name="writer"/>
+        </Method>
+        <Method name="isClosed" returnType="boolean" visibility="public"/>
+        <Method name="setClosed" returnType="void" visibility="public">
+          <Argument type="boolean" name="Closed"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Writer" package="cal3" visibility="public" xPosition="2229.0" yPosition="694.0">
+      <Fields>
+        <Field name="mercadona" type="SuperMarket" visibility="private"/>
+        <Field name="buffer" type="String" visibility="private"/>
+        <Field name="escrito" type="boolean" visibility="private"/>
+        <Field name="archivo" type="File" visibility="private"/>
+        <Field name="fr" type="FileWriter" visibility="private"/>
+        <Field name="pr" type="PrintWriter" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="SuperMarket" name="goya"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="append" returnType="void" visibility="public" isSynchronized="true">
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="write" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="writelast" returnType="void" visibility="public" isSynchronized="true"/>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="getMercadona" returnType="SuperMarket" visibility="public"/>
+        <Method name="setMercadona" returnType="void" visibility="public">
+          <Argument type="SuperMarket" name="mercadona"/>
+        </Method>
+        <Method name="getBuffer" returnType="String" visibility="public"/>
+        <Method name="setBuffer" returnType="void" visibility="public">
+          <Argument type="String" name="buffer"/>
+        </Method>
+        <Method name="getValor" returnType="String" visibility="public"/>
+        <Method name="setValor" returnType="void" visibility="public">
+          <Argument type="String" name="valor"/>
+        </Method>
+        <Method name="isEscrito" returnType="boolean" visibility="public"/>
+        <Method name="setEscrito" returnType="void" visibility="public">
+          <Argument type="boolean" name="escrito"/>
+        </Method>
+        <Method name="getArchivo" returnType="File" visibility="public"/>
+        <Method name="setArchivo" returnType="void" visibility="public">
+          <Argument type="File" name="archivo"/>
+        </Method>
+        <Method name="getFr" returnType="FileWriter" visibility="public"/>
+        <Method name="setFr" returnType="void" visibility="public">
+          <Argument type="FileWriter" name="fr"/>
+        </Method>
+        <Method name="getPr" returnType="PrintWriter" visibility="public"/>
+        <Method name="setPr" returnType="void" visibility="public">
+          <Argument type="PrintWriter" name="pr"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="WaitingC1" source="cal3.SuperMarket" target="cal3.NQueue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="NQueue"/>
+    <HasRelation name="writer" source="cal3.SuperMarket" target="cal3.Writer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mercadona" source="cal3.Writer" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mercadona" source="cal3.Main" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.Main" target="cal3.Buyer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mercadona" source="cal3.NewClass" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ex" source="cal3.Butcher" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.Writer" target="cal3.SuperMarket" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.SuperMarket" target="cal3.Queue" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="v" source="cal3.Main" target="cal3.Buyer" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ex" source="cal3.Cashier" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.SuperMarket" target="cal3.Cashier" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.SuperMarket" target="cal3.Writer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="c1" source="cal3.SuperMarket" target="cal3.Cashier" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="butcher" source="cal3.SuperMarket" target="cal3.Butcher" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="WaitingFish" source="cal3.SuperMarket" target="cal3.Queue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Queue"/>
+    <UseRelation source="cal3.Main" target="cal3.SuperMarket" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="fisher" source="cal3.SuperMarket" target="cal3.Fisher" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ex" source="cal3.Buyer" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.Writer" target="cal3.Writer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="WaitingPay" source="cal3.SuperMarket" target="cal3.Queue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Queue"/>
+    <HasRelation name="ex" source="cal3.Fisher" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="cal3.SuperMarket" target="cal3.Fisher" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="cal3.ControlModule" target="cal3.Client" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="WaitingSuperMarket" source="cal3.SuperMarket" target="cal3.Queue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Queue"/>
+    <UseRelation source="cal3.SuperMarket" target="cal3.Butcher" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="OnShelves" source="cal3.SuperMarket" target="cal3.Queue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Queue"/>
+    <UseRelation source="cal3.Cashier" target="cal3.SuperMarket" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="WaitingButcher" source="cal3.SuperMarket" target="cal3.Queue" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="Queue"/>
+    <HasRelation name="mercadona" source="cal3.Server" target="cal3.SuperMarket" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

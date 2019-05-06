@@ -198,7 +198,7 @@ public class SuperMarket extends Thread{
         Butcher.unlock();
     }
     /**
-     * method for the buther to attend the clients
+     * method for the butcher to attend the clients
      * @throws InterruptedException 
      */
     public void butcherAtt() throws InterruptedException
