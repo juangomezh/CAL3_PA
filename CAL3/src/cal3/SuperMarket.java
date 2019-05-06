@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
@@ -19,6 +20,8 @@ import javax.swing.JTextField;
 public class SuperMarket extends Thread{
     //average time of the work of the butcher and fisher
     private float averagetimebutcher, averagetimefisher;
+    //for taking the average time
+    long b0, b1, f0, f1, timebutcher, timefisher;
     //accumulated services of the butcher and fisher
     private int butcherservices, fisherservices;
     //the class that implements the thread that will write in the log
@@ -209,6 +212,7 @@ public class SuperMarket extends Thread{
             }
             else
             {
+                b0 = (new Date()).getTime();
                 butcherservices++; //add 1 to the number of services
                 int client=WaitingB.pop(); // take it from the queues
                 WaitingButcher.pop(client);
@@ -218,6 +222,8 @@ public class SuperMarket extends Thread{
                 Thread.sleep((int)(1500+1000*Math.random())); //tie to serve
                 ButcherAtt.pop(client);
                 ButcherS.release(); //release the buyer, as it as alreadey serve it
+                b1= (new Date()).getTime();
+                this.timebutcher+=b1-b0;
             }
             }
         Butcher.unlock();
@@ -277,6 +283,7 @@ public class SuperMarket extends Thread{
             }
             else
             {
+                f0 = (new Date()).getTime();
                 fisherservices++;
                 int client=WaitingF.pop(); //take the buyers from the queues
                 WaitingFish.pop(client);
@@ -286,6 +293,8 @@ public class SuperMarket extends Thread{
                 Thread.sleep((int)(2000+1000*Math.random())); //time to serve
                 FishAtt.pop(client);
                 FisherS.release(); //release the buyer
+                f1= (new Date()).getTime();
+                this.timefisher+=f1-f0; //add the accumulated time of the services performed
             }
             }
         Fish.unlock();
@@ -459,6 +468,8 @@ public class SuperMarket extends Thread{
             finish.await(); //wait until all the threads have finish, to compute the values
             System.out.println("The SP is closed, no more clients inside");
             averagecli=totaltime/numcli;
+            timefisher(timefisher);
+            timebutcher(timebutcher);
             //call the writer to add those values to the buffer
             writer.append("The number of accumulated services in the butcher are: "+this.butcherservices);
             writer.setEscrito(true);

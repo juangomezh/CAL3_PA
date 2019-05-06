@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 public class Fisher extends Thread{
     private int id;
     private SuperMarket ex;
-    private long t0, t1, total=0;
     private CountDownLatch finish;
     public Fisher(CountDownLatch finish, int id, SuperMarket ex){
         this.finish=finish;
@@ -28,7 +27,7 @@ public class Fisher extends Thread{
     }
     public void run()
     {
-        t0 = (new Date()).getTime();
+        
         while(!ex.isFinished())
         {
             try {
@@ -37,10 +36,7 @@ public class Fisher extends Thread{
                 Logger.getLogger(Fisher.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        t1= (new Date()).getTime();
-        total+=t1-t0; //add the accumulated time of the services performed
         System.out.println("Fisher Finished");
-        ex.timefisher(total);
         finish.countDown();
     }
     

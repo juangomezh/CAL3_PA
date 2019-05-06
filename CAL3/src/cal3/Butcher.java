@@ -17,7 +17,6 @@ import java.util.logging.Logger;
  */
 public class Butcher extends Thread{
     private int id;
-    private long t0, t1, total=0;
     private SuperMarket ex;
     private CountDownLatch finish;
     public Butcher(CountDownLatch finish, int id, SuperMarket ex){
@@ -29,7 +28,7 @@ public class Butcher extends Thread{
 
     public void run()
     {
-        t0 = (new Date()).getTime();
+        
         while(!ex.isFinished())
         {
             try {
@@ -39,10 +38,7 @@ public class Butcher extends Thread{
                 Logger.getLogger(Butcher.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        t1= (new Date()).getTime();
-        total+=t1-t0;
         System.out.println("Butcher Finished");
-        ex.timebutcher(total);
         finish.countDown();
     }
 }

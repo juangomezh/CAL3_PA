@@ -18,7 +18,6 @@ import java.util.logging.Logger;
 public class Cashier extends Thread{
     private int id;
     private SuperMarket ex;
-    private long t0, t1, total=0;
     private CountDownLatch finish;
     public Cashier(CountDownLatch finish, int id, SuperMarket ex){
         this.finish=finish;
@@ -32,7 +31,6 @@ public class Cashier extends Thread{
     }
     public void run()
     {
-        t0 = (new Date()).getTime();
         while(!ex.isFinished())
         {
             if(id==1) //check the id of the cashier, to select its position in the supermarket
@@ -52,8 +50,6 @@ public class Cashier extends Thread{
                 }
             }
         }
-        t1= (new Date()).getTime();
-        total+=t1-t0; //add the accumulated time in the supermarket
         System.out.println("Cashier "+id+" Finished");
         finish.countDown();
     }
